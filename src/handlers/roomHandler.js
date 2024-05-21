@@ -28,9 +28,9 @@ const getRooms = async (req,res)=>{
 
 const insertRoom = async (req,res) => {
     try{
-        const { name, roomNumber, floor, available, roomTypeId } = req.body;
+        const { name, roomNumber, floor, available, RoomTypeId } = req.body;
         await Room.create({
-            name,roomNumber,floor,available,roomTypeId
+            name,roomNumber,floor,available,RoomTypeId
         });
         res.status(201).json({
             status : `Success`
