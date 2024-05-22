@@ -3,17 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>API Documentation</title>
+  <title>Reservasi Hotel API Documentation</title>
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
   <h1>API Documentation</h1>
+  <center>
+    <h2>Don't forget to add "/api" path before the Endpoint</h2>
+  </center>
   <table>
     <thead>
       <tr>
         <th>Method</th>
         <th>Endpoint</th>
         <th>Description</th>
+        <th>Example Request</th>
+        <th>Example Response</th>
       </tr>
     </thead>
     <tbody>
@@ -21,46 +26,142 @@
         <td>GET</td>
         <td>/roomtypes</td>
         <td>Read All RoomTypes</td>
+        <td><pre><code>{}</code></pre></td>
+        <td><pre><code>[
+  {
+    "id": 1,
+    "name": "Deluxe",
+    "price": 100.00
+  },
+  {
+    "id": 2,
+    "name": "Suite",
+    "price": 200.00
+  }
+]</code></pre></td>
       </tr>
       <tr>
         <td>GET</td>
         <td>/roomtypes/:id</td>
         <td>Read RoomType by ID</td>
+        <td><pre><code>{
+  "id": 1
+}</code></pre></td>
+        <td><pre><code>{
+  "id": 1,
+  "name": "Deluxe",
+  "price": 100.00
+}</code></pre></td>
       </tr>
       <tr>
         <td>GET</td>
         <td>/rooms</td>
         <td>Read All Rooms</td>
+        <td><pre><code>{}</code></pre></td>
+        <td><pre><code>[
+  {
+    "id": 1,
+    "name": "Room 101",
+    "roomNumber": "101",
+    "floor": 1,
+    "available": true,
+    "roomTypeId": 1
+  },
+  {
+    "id": 2,
+    "name": "Room 102",
+    "roomNumber": "102",
+    "floor": 1,
+    "available": false,
+    "roomTypeId": 2
+  }
+]</code></pre></td>
       </tr>
       <tr>
         <td>POST</td>
         <td>/room</td>
         <td>Insert a Room (requires authentication)</td>
+        <td><pre><code>{
+  "name": "Room 103",
+  "roomNumber": "103",
+  "floor": 1,
+  "available": true,
+  "roomTypeId": 1
+}</code></pre></td>
+        <td><pre><code>{
+  "id": 3,
+  "name": "Room 103",
+  "roomNumber": "103",
+  "floor": 1,
+  "available": true,
+  "roomTypeId": 1
+}</code></pre></td>
       </tr>
       <tr>
         <td>POST</td>
         <td>/roomtype</td>
         <td>Insert a RoomType (requires authentication)</td>
+        <td><pre><code>{
+  "name": "Standard",
+  "price": 80.00
+}</code></pre></td>
+        <td><pre><code>{
+  "id": 3,
+  "name": "Standard",
+  "price": 80.00
+}</code></pre></td>
       </tr>
       <tr>
         <td>PUT</td>
         <td>/roomtype</td>
         <td>Update RoomType Price (requires authentication)</td>
+        <td><pre><code>{
+  "id": 1,
+  "price": 120.00
+}</code></pre></td>
+        <td><pre><code>{
+  "id": 1,
+  "name": "Deluxe",
+  "price": 120.00
+}</code></pre></td>
       </tr>
       <tr>
         <td>DELETE</td>
         <td>/roomtype</td>
         <td>Remove a RoomType (requires authentication)</td>
+        <td><pre><code>{
+  "id": 1
+}</code></pre></td>
+        <td><pre><code>{
+  "message": "RoomType removed successfully"
+}</code></pre></td>
       </tr>
       <tr>
         <td>POST</td>
         <td>/signup</td>
         <td>Sign up an Employee</td>
+        <td><pre><code>{
+  "username": "employee1",
+  "password": "password123",
+  "roleId": 1
+}</code></pre></td>
+        <td><pre><code>{
+  "id": 1,
+  "username": "employee1",
+  "roleId": 1
+}</code></pre></td>
       </tr>
       <tr>
         <td>POST</td>
         <td>/signin</td>
         <td>Sign in an Employee</td>
+        <td><pre><code>{
+  "username": "employee1",
+  "password": "password123"
+}</code></pre></td>
+        <td><pre><code>{
+  "token": "your_jwt_token_here"
+}</code></pre></td>
       </tr>
     </tbody>
   </table>
