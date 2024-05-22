@@ -19,7 +19,7 @@ const PORT = process.env.PORT || 3000;
 
   Association().then(()=>{
     app.listen(process.env.PORT);
-    console.log(`server is running on port ${PORT}\nhttp://${process.env.HOST}:${process.env.PORT}`);
+    console.log(`server is running on port ${PORT}\nhttp://localhost:${process.env.PORT}`);
   }).catch(e=>{
     console.log(`ERROR : ${e.message}`);
   });

@@ -20,7 +20,7 @@ const getRooms = async (req,res)=>{
         }
       } catch (error) {
         res.status(400).json({ 
-          message: `error :  ${error.message}`
+          message: `error :  ${process.env.HOST}`
         });
       }
 };
