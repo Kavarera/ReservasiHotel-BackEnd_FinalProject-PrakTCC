@@ -20,8 +20,7 @@ const getRooms = async (req,res)=>{
         }
       } catch (error) {
         res.status(400).json({ 
-          message: `error : ${process.env.PORT} ${process.env.DATABASE}`,
-          detail : error.message
+          message: `error : ${ error.message}`
         });
       }
 };
