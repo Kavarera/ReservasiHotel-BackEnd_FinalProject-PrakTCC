@@ -1,9 +1,20 @@
 steps:
 # Copy the .env to dir
-- name: 'ubuntu'
-  args: ['-c','echo', '${_ENV}', '>', '/.env']
+# - name: 'ubuntu'
+#   args: ['-c','echo', '${_ENV}', '>', '/.env']
 - name: 'gcr.io/cloud-builders/npm'
   args: ['install']
+- name: 'node:10.15.1'
+  entrypoint: 'npm'
+  args: ['run','create-env']
+  env:
+    - 'PORT=${_PORT}'
+    - 'HOST=${_HOST}'
+    - 'DIALECT=${_DIALECT}'
+    - 'DATABASE=${_DATABASE}'
+    - 'USER=${_USER}'
+    - 'PASSWORD=${_PASSWORD}'
+    - 'ACCESS_TOKEN_SECRET=${_ACCESS_TOKEN_SECRET}'
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: 'bash'
   args: ['-c', 'gcloud config set app/cloud_build_timeout 1600 && gcloud app deploy']
