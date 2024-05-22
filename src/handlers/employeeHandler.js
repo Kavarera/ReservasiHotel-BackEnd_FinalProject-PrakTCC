@@ -38,9 +38,8 @@ const loginEmployee = async (req,res)=>{
         }
         //buat token
         const token = jwt.sign({
-            employeId: emp.RoleId,
-            role: 'ADMIN',
-            note: 'GUA KECE DARI LAHIR YA BEGINILA SUDAH TAKDIR'
+            roleId: emp.RoleId,
+            employeeId: emp.id
         },process.env.ACCESS_TOKEN_SECRET,{
             algorithm: "HS256",
             expiresIn: "365d"

@@ -2,6 +2,8 @@ const Room = require('../models/room');
 const RoomType = require('../models/roomtypes');
 const Role = require('../models/role');
 const Employee = require('../models/employee');
+const Customer = require('../models/customer');
+const Booking = require('../models/booking');
 const sequelize = require('./connection');
 
 
@@ -30,6 +32,34 @@ Employee.belongsTo(Role,{
         allowNull: false
     }
 });
+
+//For Booking
+Room.hasMany(Booking,{
+    foreignKey:{
+        name:'RoomId',
+        allowNull:false
+    }
+});
+Booking.belongsTo(Room,{
+    foreignKey:{
+        name:'RoomId',
+        allowNull:false
+    }
+});
+Customer.hasMany(Booking,{
+    foreignKey:{
+        name:'CustomerId',
+        allowNull:false
+    }
+});
+Booking.belongsTo(Customer,{
+    foreignKey:{
+        name:'CustomerId',
+        allowNull:false
+    }
+});
+
+
 
 const Association = async () => {
     try {

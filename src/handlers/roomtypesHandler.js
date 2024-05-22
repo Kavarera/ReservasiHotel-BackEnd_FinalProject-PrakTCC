@@ -36,6 +36,11 @@ const getRoomTypeById = async (req, res) => {
 
 const insertRoomType = async(req,res) =>{
     try{
+        if(req.employee.RoleId !== 1){
+          return res.sendStatus(403);
+        }
+
+
         const {name,price} = req.body;
         await RoomType.create({
             name,price
@@ -53,6 +58,11 @@ const insertRoomType = async(req,res) =>{
 
 const updateRoomTypePrice = async(req,res)=>{
     try{
+      if(req.employee.RoleId !== 1){
+        return res.sendStatus(403);
+      }
+
+
       const {id,price} = req.body;
       const currentRT = await RoomType.findByPk(id);
       currentRT.update({
@@ -72,6 +82,12 @@ const updateRoomTypePrice = async(req,res)=>{
 
 const removeRoomType = async (req,res)=>{
     try{
+        if(req.employee.RoleId !== 1){
+          return res.sendStatus(403);
+        }
+
+
+
         const {id} = req.body;
         await RoomType.destroy({
             where:{

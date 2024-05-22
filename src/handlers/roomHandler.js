@@ -28,6 +28,11 @@ const getRooms = async (req,res)=>{
 
 const insertRoom = async (req,res) => {
     try{
+        if(req.employee.RoleId !== 1){
+          return res.sendStatus(403); // Forbidden
+        }
+
+        
         const { name, roomNumber, floor, available, RoomTypeId } = req.body;
         await Room.create({
             name,roomNumber,floor,available,RoomTypeId
