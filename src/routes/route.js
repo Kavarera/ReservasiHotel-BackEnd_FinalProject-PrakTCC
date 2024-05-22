@@ -40,15 +40,15 @@ router.get('/bookings',getBookings);
 
 router.get('/bookings/:RoomId',getBookingByRoomId);
 
-
+// insert a new booking
 router.post('/booking',insertBooking);
-
+//insert a new room
 router.post(`/room`,verifyToken,insertRoom);
-
+//insert a new room type
 router.post('/roomtype',verifyToken,insertRoomType)
-
+//update roomtype price
 router.put('/roomtype',verifyToken, updateRoomTypePrice)
-
+//deleting roomtype
 router.delete(`/roomtype`,verifyToken,removeRoomType)
 
 //Employee

@@ -27,18 +27,16 @@
         <td>/roomtypes</td>
         <td>Read All RoomTypes</td>
         <td><pre><code>{}</code></pre></td>
-        <td><pre><code>[
-  {
-    "id": 1,
-    "name": "Deluxe",
-    "price": 100.00
-  },
-  {
-    "id": 2,
-    "name": "Suite",
-    "price": 200.00
-  }
-]</code></pre></td>
+        <td><pre><code>{
+  "length": 1,
+  "data": [
+      {
+      "id": 1,
+      "name": "Deluxe Room",
+      "price": "10000"
+    }
+  ]
+}</code></pre></td>
       </tr>
       <tr>
         <td>GET</td>
@@ -48,9 +46,11 @@
   "id": 1
 }</code></pre></td>
         <td><pre><code>{
-  "id": 1,
-  "name": "Deluxe",
-  "price": 100.00
+  "data": {
+    "id": 1,
+    "name": "Deluxe Room",
+    "price": "10000"
+  }
 }</code></pre></td>
       </tr>
       <tr>
@@ -58,24 +58,19 @@
         <td>/rooms</td>
         <td>Read All Rooms</td>
         <td><pre><code>{}</code></pre></td>
-        <td><pre><code>[
-  {
-    "id": 1,
-    "name": "Room 101",
-    "roomNumber": "101",
-    "floor": 1,
-    "available": true,
-    "roomTypeId": 1
-  },
-  {
-    "id": 2,
-    "name": "Room 102",
-    "roomNumber": "102",
-    "floor": 1,
-    "available": false,
-    "roomTypeId": 2
-  }
-]</code></pre></td>
+        <td><pre><code>{
+  "length": 1,
+  "data": [
+    {
+      "id": 1,
+      "name": "13asic R1oo1",
+      "roomNumber": "A1",
+      "floor": 2,
+      "available": false,
+      "RoomTypeId": 1
+    }
+  ]
+}</code></pre></td>
       </tr>
       <tr>
         <td>POST</td>
@@ -89,12 +84,7 @@
   "roomTypeId": 1
 }</code></pre></td>
         <td><pre><code>{
-  "id": 3,
-  "name": "Room 103",
-  "roomNumber": "103",
-  "floor": 1,
-  "available": true,
-  "roomTypeId": 1
+  status : `Success`
 }</code></pre></td>
       </tr>
       <tr>
@@ -106,9 +96,7 @@
   "price": 80.00
 }</code></pre></td>
         <td><pre><code>{
-  "id": 3,
-  "name": "Standard",
-  "price": 80.00
+  status : `Success`
 }</code></pre></td>
       </tr>
       <tr>
@@ -120,9 +108,12 @@
   "price": 120.00
 }</code></pre></td>
         <td><pre><code>{
-  "id": 1,
-  "name": "Deluxe",
-  "price": 120.00
+  status : 'Success',
+  roomtype: {
+    "id": 1,
+    "name": "Deluxe",
+    "price": 120.00
+  }
 }</code></pre></td>
       </tr>
       <tr>
@@ -133,7 +124,7 @@
   "id": 1
 }</code></pre></td>
         <td><pre><code>{
-  "message": "RoomType removed successfully"
+  status : `Success`,
 }</code></pre></td>
       </tr>
       <tr>
@@ -143,12 +134,10 @@
         <td><pre><code>{
   "username": "employee1",
   "password": "password123",
-  "roleId": 1
+  "roleId": 5
 }</code></pre></td>
         <td><pre><code>{
-  "id": 1,
-  "username": "employee1",
-  "roleId": 1
+  status: 'Success'
 }</code></pre></td>
       </tr>
       <tr>
@@ -160,8 +149,74 @@
   "password": "password123"
 }</code></pre></td>
         <td><pre><code>{
+  status: 'Success',
+  message : 'Login Successfully',
   "token": "your_jwt_token_here"
 }</code></pre></td>
+      </tr>
+      <tr>
+        <td>GET</td>
+        <td>/bookings</td>
+        <td>Get list of booking</td>
+        <td><pre><code>
+          {}
+        </code></pre></td>
+        <td><pre><code>{
+  "length":1,
+  "data":{
+    "checkin":20-20-2024,
+    "days":2
+  }
+}</code></pre></td>
+      </tr>
+      <tr>
+        <td>GET</td>
+        <td>/bookings/:id</td>
+        <td>Get a spesific booking by RoomId</td>
+        <td><pre><code>
+{
+  "RoomId":1
+}
+        </code></pre></td>
+        <td><pre><code>
+{
+  "length":1,
+  "data":{
+    "checkin":20-20-2024,
+    "days":2
+  }
+}
+        </code></pre></td>
+      </tr>
+      <tr>
+        <td>POST</td>
+        <td>/booking</td>
+        <td>Create a new booking</td>
+        <td><pre><code>
+{
+  "nik":111111111111,
+  "fullname":"Rafli Iskandar Kavarera",
+  "phone":"01234567890",
+  "email":"example@gmail.com",
+  "checkin":20-12-2024,
+  "days":5,
+  "RoomId":1,
+}
+        </code></pre></td>
+        <td><pre><code>
+{
+  "status":"Success",
+  "data":{
+    "booking":{
+      "kode_booking": "123211231",
+      "checkin": 20-12-2024,
+      "days":5,
+      "RoomId": 1,
+      "CustomerId": 53
+    }
+  }
+}
+        </code></pre></td>
       </tr>
     </tbody>
   </table>

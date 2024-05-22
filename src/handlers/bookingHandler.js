@@ -5,10 +5,6 @@ const Customer = require('../models/customer');
 
 const getBookings = async (req,res)=>{
     try{
-        console.log(req.employee.RoleId);
-        if(req.employee.RoleId !== 1){
-            return res.sendStatus(403);
-        }
         const booking = await Booking.findAll({
             attributes:['checkin','days']
         });
@@ -26,9 +22,6 @@ const getBookings = async (req,res)=>{
 
 const getBookingByRoomId = async(req,res)=>{
     try{
-        if(req.employee.RoleId !== 1){
-            return res.sendStatus(403);
-        }
         const booking = await Booking.findAll({
             where:{
                 RoomId: req.params.RoomId
