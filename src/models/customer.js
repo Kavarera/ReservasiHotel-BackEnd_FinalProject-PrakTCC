@@ -11,6 +11,7 @@ const Customer = sequelize.define('Customer',{
     nik:{
         type: DataTypes.STRING,
         allowNull:false,
+        unique:true
     },
     fullname:{
         type:DataTypes.STRING,

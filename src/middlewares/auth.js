@@ -11,6 +11,7 @@ const verifyToken = async(req,res,next)=>{
             return res.sendStatus(403);
         }
         req.employee=employee;
+        console.log(req.employee.RoleId);
         next();
     })
 }

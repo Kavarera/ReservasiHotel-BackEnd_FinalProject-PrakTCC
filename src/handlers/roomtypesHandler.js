@@ -4,17 +4,10 @@ const RoomType = require('../models/roomtypes');
 const getAllRoomTypes = async (req,res,next)=>{
     try {
         const rooms = await RoomType.findAll();
-        if(rooms.length <= 0) {
-          res.status(200).json({
-            length: rooms.length,
-            data: null
-          });
-        } else {
-          res.status(200).json({
-            length: rooms.length,
-            data: rooms // Mengirimkan rooms langsung sebagai respons
-          });
-        }
+        res.status(200).json({
+          length: rooms.length,
+          data: rooms.length <=0 ? null : rooms
+        });
       } catch (error) {
         res.status(400).json({ message: error.message });
       }
@@ -59,6 +52,7 @@ const insertRoomType = async(req,res) =>{
 const updateRoomTypePrice = async(req,res)=>{
     try{
       if(req.employee.RoleId !== 1){
+        console.log(req.employee.RoleId);
         return res.sendStatus(403);
       }
 

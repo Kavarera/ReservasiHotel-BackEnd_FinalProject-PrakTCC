@@ -38,7 +38,7 @@ const loginEmployee = async (req,res)=>{
         }
         //buat token
         const token = jwt.sign({
-            roleId: emp.RoleId,
+            RoleId: emp.RoleId,
             employeeId: emp.id
         },process.env.ACCESS_TOKEN_SECRET,{
             algorithm: "HS256",

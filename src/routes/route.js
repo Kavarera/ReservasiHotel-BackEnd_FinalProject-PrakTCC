@@ -1,10 +1,20 @@
 const express = require('express');
+// Roomtypes
 const { getRoomTypeById, getAllRoomTypes,
   insertRoomType, removeRoomType,
   updateRoomTypePrice } = require('../handlers/roomtypesHandler');
-const {getRooms, insertRoom} = require('../handlers/roomHandler');
+// Rooms
+  const {getRooms, insertRoom} = require('../handlers/roomHandler');
+// Token
 const verifyToken = require('../middlewares/auth');
-const {signupEmployee,loginEmployee} = require('../handlers/employeeHandler');
+// Employee
+const {signupEmployee,
+  loginEmployee} = require('../handlers/employeeHandler');
+// Booking
+const {getBookings,
+  getBookingByRoomId,
+  insertBooking} = require('../handlers/bookingHandler');
+
 
 const router = express.Router();
 require('../models/roomtypes');
@@ -25,7 +35,13 @@ router.get('/roomtypes/:id', getRoomTypeById);
 // Read All Room
 router.get('/rooms', getRooms);
 
+//Read All Booking, ITS TOP SECRET!
+router.get('/bookings',verifyToken,getBookings);
 
+router.get('/bookings/:RoomId',verifyToken,getBookingByRoomId);
+
+
+router.post('/booking',insertBooking);
 
 router.post(`/room`,verifyToken,insertRoom);
 
