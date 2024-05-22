@@ -36,9 +36,9 @@ router.get('/roomtypes/:id', getRoomTypeById);
 router.get('/rooms', getRooms);
 
 //Read All Booking, ITS TOP SECRET!
-router.get('/bookings',verifyToken,getBookings);
+router.get('/bookings',getBookings);
 
-router.get('/bookings/:RoomId',verifyToken,getBookingByRoomId);
+router.get('/bookings/:RoomId',getBookingByRoomId);
 
 
 router.post('/booking',insertBooking);

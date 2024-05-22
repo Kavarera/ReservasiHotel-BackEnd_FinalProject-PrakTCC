@@ -9,7 +9,9 @@ const getBookings = async (req,res)=>{
         if(req.employee.RoleId !== 1){
             return res.sendStatus(403);
         }
-        const booking = await Booking.findAll();
+        const booking = await Booking.findAll({
+            attributes:['checkin','days']
+        });
         res.status(200).json({
             length: booking.length,
             data: booking.length<=0?null:booking
@@ -30,7 +32,8 @@ const getBookingByRoomId = async(req,res)=>{
         const booking = await Booking.findAll({
             where:{
                 RoomId: req.params.RoomId
-            }
+            },
+            attributes:['checkin','days']
         });
         res.status(200).json({
             length: booking.length,
