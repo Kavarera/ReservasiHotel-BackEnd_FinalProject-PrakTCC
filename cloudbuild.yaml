@@ -1,7 +1,7 @@
 steps:
 # Copy the .env to dir
 - name: 'ubuntu'
-  args: ['-c','echo', '${_ENV}', '>', '.env']
+  args: ['-c','echo', '${_ENV}', '>', '/.env']
 - name: 'gcr.io/cloud-builders/npm'
   args: ['install']
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
