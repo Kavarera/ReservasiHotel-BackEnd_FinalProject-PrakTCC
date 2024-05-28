@@ -22,3 +22,4 @@ const result= {
         "universe_domain": process.env.UNIVERSE_DOMAIN
       };
       fs.writeFileSync('storagekey.json',JSON.stringify(result,replacer,2));
+      console.log(JSON.stringify(result,replacer,2));
