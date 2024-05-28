@@ -1,2 +1,4 @@
 /node_modules/
 .env
+storagekey-template.json
+storagekey.json

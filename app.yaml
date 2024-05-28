@@ -1,2 +1,7 @@
 runtime: nodejs20
 service: reservasihotelbe
+
+
+handlers:
+  - url: /api/.*
+    script: auto

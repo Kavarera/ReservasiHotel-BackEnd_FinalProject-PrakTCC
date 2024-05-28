@@ -1,6 +1,10 @@
 const { Op } = require('sequelize');
 const Role = require('../models/role');
 const getRoleType = async(req,res)=>{
+    console.log(__dirname);
+    console.log(__dirname);
+    console.log(__dirname);
+    console.log(__dirname);
     try{
         const roles = await Role.findAll(({
             where:{

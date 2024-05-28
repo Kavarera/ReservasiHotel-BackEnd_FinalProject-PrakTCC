@@ -60,6 +60,11 @@ router.post('/role',verifyToken,createRole);
 router.post('/signup',signupEmployee);
 router.post('/signin',loginEmployee);
 
+//file
+const upload = require('../middlewares/upload');
+const { uploadFile } = require('../handlers/uploadHandler');
+router.post('/upload',verifyToken, upload.single('file'), uploadFile);
+
 router.use('*',(req,res)=>{
   res.status(404).json({
     message:'Wrong endpoint'
