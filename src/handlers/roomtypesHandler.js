@@ -34,9 +34,9 @@ const insertRoomType = async(req,res) =>{
         }
 
 
-        const {name,price} = req.body;
+        const {name,price,imageUrl} = req.body;
         await RoomType.create({
-            name,price
+            name,price,imageUrl
         });
         res.status(201).json({
             status:`Success`
@@ -57,10 +57,11 @@ const updateRoomTypePrice = async(req,res)=>{
       }
 
 
-      const {id,price} = req.body;
+      const {id,price,imageUrl} = req.body;
       const currentRT = await RoomType.findByPk(id);
       currentRT.update({
-        price
+        price:price,
+        imageUrl:imageUrl
       });
       res.status(200).json({
         status : 'Success',
