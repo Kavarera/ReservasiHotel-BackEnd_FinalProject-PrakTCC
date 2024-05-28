@@ -15,6 +15,10 @@ const RoomType = sequelize.define('RoomType', {
         type: DataTypes.DECIMAL,
         allowNull: false,
     },
+    imageUrl:{
+        type:DataTypes.STRING,
+        allowNull:false
+    }
 }, {
     timestamps: false
 });
