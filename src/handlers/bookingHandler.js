@@ -44,7 +44,7 @@ const insertBooking = async (req,res)=>{
     try{
         //search customer then create customer first if not exist
         const {nik,fullname,phone,email,checkin,days,RoomId} = req.body;
-        const customer = await Customer.findOrCreate({
+        const [customer,created] = await Customer.findOrCreate({
             where:{
                 nik:nik
             },
