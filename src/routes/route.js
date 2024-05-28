@@ -14,6 +14,7 @@ const {signupEmployee,
 const {getBookings,
   getBookingByRoomId,
   insertBooking} = require('../handlers/bookingHandler');
+const { getRoleType, createRole } = require('../handlers/roleHandler');
 
 
 const router = express.Router();
@@ -50,6 +51,10 @@ router.post('/roomtype',verifyToken,insertRoomType)
 router.put('/roomtype',verifyToken, updateRoomTypePrice)
 //deleting roomtype
 router.delete(`/roomtype`,verifyToken,removeRoomType)
+
+//Role
+router.get('/roles',getRoleType);
+router.post('/role',verifyToken,createRole);
 
 //Employee
 router.post('/signup',signupEmployee);

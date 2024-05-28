@@ -30,11 +30,11 @@ const loginEmployee = async (req,res)=>{
             }
         });
         if(emp==undefined){
-            throw new Error('Invalid Email or Password!');
+            throw new Error('Invalid Username or Password!');
         }
         const verifyPass = await bcrypt.compare(password,emp.password);
         if(!verifyPass){
-            throw new Error('Invalid Email or Password!');
+            throw new Error('Invalid Username or Password!');
         }
         //buat token
         const token = jwt.sign({
