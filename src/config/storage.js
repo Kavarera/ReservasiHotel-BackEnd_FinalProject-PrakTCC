@@ -1,6 +1,5 @@
 const { Storage } = require('@google-cloud/storage');
 const path = require('path');
-const getStorageKey = require('../utils/getStorageKey');
 
 // Inisialisasi Google Cloud Storage
 const storage = new Storage({

@@ -1,5 +1,13 @@
 require("dotenv").config();
 const fs = require('fs');
+
+const replacer = (key, value) => {
+  // Jika nilai adalah string, ganti setiap tanda kutip dengan karakter lain, misalnya dengan backslash
+  if (typeof value === 'string') {
+    return value.replace(/"/g, "");
+  }
+  return value;
+};
 const result= {
         "type": process.env.TYPE,
         "project_id": process.env.PROJECT_ID,
@@ -13,4 +21,4 @@ const result= {
         "client_x509_cert_url": process.env.CLIENT_X509_CERT_URL,
         "universe_domain": process.env.UNIVERSE_DOMAIN
       };
-      fs.writeFileSync('storagekey.json',JSON.stringify(result));
+      fs.writeFileSync('storagekey.json',JSON.stringify(result,replacer,2));
