@@ -1,0 +1,89 @@
+html {
+    scroll-behavior: smooth;
+  }
+  .judulNavbar{
+      font-size: 50px !important;
+      color: white;
+  }
+  .aboutme{
+      margin-left: 50px;
+      margin-right: 50px;
+  }
+  .itemNavbar{
+      font-size: 25px !important;
+  }
+  body{
+      background-color: #5B7A95 !important;
+  }
+  .imgProfile{
+      width: 300px;
+      height: 300px;
+      border-radius: 100%;
+      animation: mymove 10s infinite;
+  }
+  .list-sosmed{
+      border-radius: 5% !important;
+      border-width: 0px;
+      margin-left: 20px;
+      margin-right: 20px;
+      margin-bottom: 15px;
+  }
+  .card{
+      color: white;
+      border-width: 0;
+  }
+  .card-body{
+      background-color: #5B7ACA;
+  }
+  .card-image-top{
+      height: 250px;
+      margin-left: 10px;
+      margin-right: 10px;
+  }
+  .sosmed-logo{
+      width: 30px;
+      height: 30px;
+      margin-right: 15px;
+  }
+  .sosmed{
+      border-radius: 0% !important;
+  }
+  .download-btn{
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-right: 20px;
+  }
+  .developer-sosmed{
+      text-decoration: none;
+      color: white;
+  }
+  .card .list-group-item{
+      background-color: #5B7ACA;
+  }
+  .link-project-video{
+    color: white;
+  }
+  
+  .sosmed-item{
+      padding-right: 5px;
+      text-decoration: none !important;
+      font-size: 15px !important;
+      color: black !important;
+  }
+  .container{
+      color: white;
+  }
+  .footerC{
+      text-align: center;
+      width: 100%;
+      padding-top: 20px;
+      padding-right: 20px;
+      padding-bottom: 20px;
+      background-color: black;
+      color: white; 
+  }
+  
+  @keyframes mymove {
+      100% {transform: rotate(360deg);}
+    }
+  

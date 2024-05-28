@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/index.css">
+
+    <title>Kavarera</title>
+  </head>
+  <body>
+    <!--Navbar-->
+    <div class="d-none d-lg-block">
+      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #5B7ACA;" >
+        <div class="container-fluid">
+          <button class="navbar-toggler" style="background-color: white;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarTogglerDemo02">
+              <ul class="navbar-nav mx-auto ms-s-0">
+                  <li class="nav-item me-lg-2 mt-lg-2 mt-sm-3 me-sm-0">
+                      <a href="#projects" class="nav-link text-light itemNavbar">Projects</a>
+                  </li>
+                  <li class="nav-item ms-lg-2 me-lg-2 ms-sm-0 me-sm-0">
+                      <a href="#" class="nav-link text-light fs-3 fs-s-1 judulNavbar">Kavarera</a>
+                  </li>
+                  <li class="nav-item ms-lg-2 mt-lg-2 ms-sm-0 mt-sm-0">
+                      <a href="#about" class="nav-link text-light itemNavbar">About</a>
+                  </li>
+              </ul>
+            </div>
+    </nav>
+  </div>
+  <div class="d-none d-sm-block d-lg-none">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #5B7ACA;" >
+      <a href="#" class="navbar-brand mb-0 judulNavbar">Kavarera</a>
+      <div class="container-fluid">
+        <button class="navbar-toggler" style="background-color: white;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse " id="navbarTogglerDemo02">
+            <ul class="navbar-nav mx-auto ms-s-0">
+                <li class="nav-item me-lg-2 mt-lg-2 mt-sm-3 me-sm-0">
+                    <a href="#projects" class="nav-link text-light">Projects</a>
+                </li>
+                <li class="nav-item ms-lg-2 mt-lg-2 ms-sm-0 mt-sm-0">
+                    <a href="#about" class="nav-link text-light">About</a>
+                </li>
+            </ul>
+          </div>
+  </nav>
+</div>
+  <header class="masthead text-white text-center mt-5">
+    <div class="container d-flex align-items-center flex-column ">
+        <img class="masthead-avatar mb-5 imgProfile" src="img/jogja-min.jpg" alt="">
+        <h1 class="masthead-heading text-uppercase mb-0">
+            Rafli Iskandar Kavarera
+        </h1>
+        <h4 class="mt-2">Mahasiswa</h4>
+        <ul class="list-group list-group-horizontal-md sosmed mt-4">
+          <a class="sosmed-item" href="https://www.github.com/Kavarera">
+            <li class="list-group-item list-sosmed">
+              <img class="sosmed-logo" src="https://cdn-icons-png.flaticon.com/512/25/25657.png" alt="">
+              <a class="sosmed-item" href="https://www.github.com/Kavarera">Github</a>
+            </li>
+          </a>
+          <a class="sosmed-item" href="https://www.instagram.com/r_kavarera">
+            <li class="list-group-item list-sosmed">
+              <img class="sosmed-logo" src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="">
+              <a class="sosmed-item" href="https://www.instagram.com/r_kavarera">Instagram</a>
+            </li>
+        </a>
+          <a href="mailto:kavarera.work.business@gmail.com?subject=Work Offer - Kavarera.github.io&body=Please do not change the subject. and tell me the detail here :D" class="sosmed-item">
+            <li class="list-group-item list-sosmed">
+              <img class="sosmed-logo" src="https://cdn-icons-png.flaticon.com/512/546/546394.png" alt="">
+              <a class="sosmed-item" href="mailto:kavarera.work.business@gmail.com?subject=Work Offer - Kavarera.github.io&body=Please do not change the subject. and tell me the detail here :D">Work</a>
+            </li>
+          </a>
+        </ul>
+    </div>
+    <h2>About me</h2>
+    <div class="aboutme" id="about">
+      <p class="mt-3">Hallo, Saya seorang mahasiswa di Universitas Pembangunan Nasional Veteran Yogyakarta yang saat ini sedang menempuh pendidikan S1 Informatika. Saya besar di kota Tangerang, saya biasa menghabiskan waktu dengan menonton youtube dan bermain video game</p>
+    </div>
+  </header>
+  
+  <div class="container mt-3 mb-5 text-center">
+    
+    <h1 class="mt-5">Top 3 Projects</h1>
+      <!--Top 3 projects-->
+      <div class="row mt-lg-5 pt-lg-5" id="projects">
+        <div class="col-md-4">
+                <div class="card mb-5">
+                  <img src="img/project1.png" alt="project-logo" class="card-image-top">
+                    <div class="card-body">
+                      <h4 class="card-title text-center">NATURAL POS APP</h4>
+                      <p class="card-text mt-lg-1">It's a POS Application for Desktop (Windows) for "water refill" business in Indonesia. This app have basic feature like account privillege, managing product, printing, etc. Database by Microsoft SQL Server. <a class="link-project-video" href="https://youtu.be/bEgd-bhF-2A">Installation video</a> </p>
+                      <div class="card-header text-center">Developer</div>
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <a href="https://www.instagram.com/r_kavarera" class="developer-sosmed">Kavarera</a>
+                        </li>
+                      </ul>
+                      <div class="text-center row">
+                        <a class="btn btn-success col download-btn" href="https://carapedi.id/tBykCRQB">Download Project(GDrive)</a>
+                        <a class="btn btn-success col download-btn" href="https://carapedi.id/d6nxqAi" target="_blank">Download Project(safefileku)</a>
+                      </div>
+                    </div>
+                  </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="card mb-5">
+            <img src="img/profile-png.png" alt="project-logo" class="card-image-top">
+              <div class="card-body">
+                <h5 class="card-title text-center">Project 1</h5>
+                <p class="card-text mt-lg-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sodales egestas elit vitae feugiat. Integer mattis erat eget ornare tempus. Suspendisse sagittis tristique quam ac viverra. Donec eleifend mi in tellus interdum scelerisque.</p>
+                <div class="card-header text-center">Developer</div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                      <a href="https://www.instagram.com/r_kavarera" class="developer-sosmed">Kavarera</a>
+                  </li>
+                </ul>
+                <div class="text-center">
+                  <button type="button" class="btn btn-success mt-lg-5">Download Project</button>
+                </div>
+              </div>
+            </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card mb-5">
+      <img src="img/profile-png.png" alt="project-logo" class="card-image-top">
+        <div class="card-body">
+          <h5 class="card-title text-center">Project 1</h5>
+          <p class="card-text mt-lg-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sodales egestas elit vitae feugiat. Integer mattis erat eget ornare tempus. Suspendisse sagittis tristique quam ac viverra. Donec eleifend mi in tellus interdum scelerisque.</p>
+          <div class="card-header text-center">Developer</div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <a href="https://www.instagram.com/r_kavarera" class="developer-sosmed">Kavarera</a>
+            </li>
+          </ul>
+          <div class="text-center">
+            <button type="button" class="btn btn-success mt-lg-5">Download Project</button>
+          </div>
+        </div>
+      </div>
+</div>
+<p class="mt-3">Click <a href="#" style="text-decoration: none; color: #5BC5FF;">here</a> to see more projects</p>
+
+    
+    </div>
+    </div>
+
+    <div class="footerC">
+      <h2>All Rights Reserved to Rafli Iskandar Kavarera </h2>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  </body>
+</html>
+ 
