@@ -14,7 +14,7 @@ const route = require('./src/routes/route');
 app.use('/api', route);
 
 app.use('/',express.Router().get('/',(req,res)=>{
-    res.sendFile(path.join(__dirname, '../public/index.html'));
+  res.redirect('https://documenter.getpostman.com/view/30496876/2sA3QtcqZr#a753af73-095e-4d11-bd4e-eb21d96baab2');
 }));
 
 const PORT = process.env.PORT || 3000;
