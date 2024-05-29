@@ -27,7 +27,7 @@ const loginEmployee = async (req,res)=>{
         const emp = await Employee.findOne({
             where: {
                 username: username
-            },attributes:['fullname','username','RoleId']
+            },attributes:['fullname','username','password','RoleId']
         });
         if(emp==undefined){
             throw new Error('Invalid Username or Password!');
@@ -46,7 +46,11 @@ const loginEmployee = async (req,res)=>{
         });
         res.status(200).json({
             status: 'Success',
-            data: emp,
+            data: {
+                fullname: emp.fullname,
+                username: emp.username,
+                RoleId: emp.RoleId
+            },
             token: token
         });
     }catch(e){
