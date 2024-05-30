@@ -1,7 +1,7 @@
 const { nanoid } = require('nanoid');
 const Booking = require('../models/booking');
 const Customer = require('../models/customer');
-
+const {sequelize} = require('../utils/connection');
 
 const getBookings = async (req,res)=>{
     try{
