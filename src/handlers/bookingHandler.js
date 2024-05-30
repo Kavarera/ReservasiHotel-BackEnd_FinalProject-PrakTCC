@@ -79,7 +79,9 @@ const insertBooking = async (req,res)=>{
 const getPrivateBooking = async(req,res)=>{
     try{
         const booking = await Booking.findAll({
-            attributes:['kode_booking','checkin','days','RoomId','CustomerId']
+            attributes:['kode_booking',
+            [sequelize.fn('DATE_FORMAT', sequelize.col('checkin'), '%m-%d-%Y %H:%i'),
+             'checkin'],'days','RoomId','CustomerId']
         });
         res.status(200).json({
             length: booking.length,
