@@ -42,7 +42,7 @@ router.get('/bookings',getBookings);
 router.get('/bookings/:RoomId',getBookingByRoomId);
 
 //get full list of booking, only for admin
-router.get('/bookings',verifyAdmin,getPrivateBooking)
+router.get('/admin/bookings',verifyAdmin,getPrivateBooking)
 
 // insert a new booking
 router.post('/booking',insertBooking);
