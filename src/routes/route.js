@@ -6,14 +6,14 @@ const { getRoomTypeById, getAllRoomTypes,
 // Rooms
   const {getRooms, insertRoom} = require('../handlers/roomHandler');
 // Token
-const verifyToken = require('../middlewares/auth');
+const {verifyToken,verifyAdmin} = require('../middlewares/auth');
 // Employee
 const {signupEmployee,
   loginEmployee} = require('../handlers/employeeHandler');
 // Booking
 const {getBookings,
   getBookingByRoomId,
-  insertBooking} = require('../handlers/bookingHandler');
+  insertBooking,getPrivateBooking} = require('../handlers/bookingHandler');
 const { getRoleType, createRole } = require('../handlers/roleHandler');
 
 
@@ -40,6 +40,9 @@ router.get('/rooms', getRooms);
 router.get('/bookings',getBookings);
 
 router.get('/bookings/:RoomId',getBookingByRoomId);
+
+//get full list of booking, only for admin
+router.get('/bookings',verifyAdmin,getPrivateBooking)
 
 // insert a new booking
 router.post('/booking',insertBooking);

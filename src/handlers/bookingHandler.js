@@ -5,6 +5,7 @@ const Customer = require('../models/customer');
 
 const getBookings = async (req,res)=>{
     try{
+        
         const booking = await Booking.findAll({
             attributes:['checkin','days']
         });
@@ -73,8 +74,23 @@ const insertBooking = async (req,res)=>{
             message:`Error : ${e.message}`
         })
     }
-
-
 }
 
-module.exports = {getBookings,getBookingByRoomId,insertBooking}
+const getPrivateBooking = async(req,res)=>{
+    try{
+        const booking = await Booking.findAll({
+            attributes:['kode_booking','checkin','days','RoomId','CustomerId']
+        });
+        res.status(200).json({
+            length: booking.length,
+            data: booking.length <=0 ? null : booking
+        })
+    }catch(e){
+        res.status(400).json({
+            status: 'Failed',
+            message: `Error : ${e.message}`
+        })
+    }
+}
+
+module.exports = {getBookings,getBookingByRoomId,insertBooking,getPrivateBooking}
