@@ -6,7 +6,7 @@ const storage = multer.memoryStorage();
 
 // Filter jenis file jika diperlukan (misal hanya gambar)
 const fileFilter = (req, file, cb) => {
-  const fileTypes = /jpeg|jpg|png|gif/;
+  const fileTypes = /jpeg|jpg|png/;
   const extname = fileTypes.test(path.extname(file.originalname).toLowerCase());
   const mimetype = fileTypes.test(file.mimetype);
 

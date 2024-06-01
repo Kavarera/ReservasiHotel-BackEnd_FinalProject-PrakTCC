@@ -1,5 +1,6 @@
 const { nanoid } = require('nanoid');
 const bucket = require('../config/storage');
+const path = require('path');
 
 
 const uploadFile = async (req, res) => {
@@ -8,7 +9,7 @@ const uploadFile = async (req, res) => {
     }
   
     try {
-      const blob = bucket.file(`images/${nanoid(16)}`);
+      const blob = bucket.file(`images/${nanoid(16)}${path.extname(req.file.originalname)}`);
       const blobStream = blob.createWriteStream({
         resumable: false,
         metadata: {
