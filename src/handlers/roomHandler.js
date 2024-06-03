@@ -72,9 +72,31 @@ const insertRoom = async (req,res) => {
     }
 }
 
+const deleteRoom = async (req,res)=>{
+  try{
+    if(req.employee.RoleId!==1){
+      return res.sendStatus(403);
+    }
+    const { id } = req.body;
+    await Room.destroy({
+      where:{
+        id:id
+      }
+    });
+    res.status(200).json({
+      status : `Success`
+  });
+  }catch(e){
+    res.status(400).json({
+      status : `Failed`,
+            message : `Error : ${e.message}`
+    });
+  }
+}
+
 
 
 module.exports = {
     getRooms,
-    insertRoom,getRoomsAdmin
+    insertRoom,getRoomsAdmin, deleteRoom
 };
