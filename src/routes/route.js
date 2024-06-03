@@ -36,7 +36,7 @@ router.get('/roomtypes/:id', getRoomTypeById);
 // Read All Room
 router.get('/rooms', getRooms);
 router.get('/roomsavailable', verifyAdmin,getRoomsAdmin);
-router.delete('/roomsavailable', verifyAdmin,deleteRoom);
+router.delete('/room', verifyAdmin,deleteRoom);
 
 //Read All Booking, ITS TOP SECRET!
 router.get('/bookings',getBookings);
