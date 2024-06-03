@@ -4,7 +4,7 @@ const { getRoomTypeById, getAllRoomTypes,
   insertRoomType, removeRoomType,
   updateRoomTypePrice } = require('../handlers/roomtypesHandler');
 // Rooms
-  const {getRooms, insertRoom} = require('../handlers/roomHandler');
+  const {getRooms, insertRoom,getRoomsAdmin} = require('../handlers/roomHandler');
 // Token
 const {verifyToken,verifyAdmin} = require('../middlewares/auth');
 // Employee
@@ -35,6 +35,7 @@ router.get('/roomtypes/:id', getRoomTypeById);
 
 // Read All Room
 router.get('/rooms', getRooms);
+router.get('/rooms', verifyAdmin,getRoomsAdmin);
 
 //Read All Booking, ITS TOP SECRET!
 router.get('/bookings',getBookings);

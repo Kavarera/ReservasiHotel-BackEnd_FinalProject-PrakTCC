@@ -24,6 +24,30 @@ const getRooms = async (req,res)=>{
         });
       }
 };
+const getRoomsAdmin = async (req,res)=>{
+    try {
+        const rooms = await Room.findAll({
+            where:{
+                available: true
+            }
+        });
+        if(rooms.length <= 0) {
+          res.status(200).json({
+            length: rooms.length,
+            data: null
+          });
+        } else {
+          res.status(200).json({
+            length: rooms.length,
+            data: rooms // Mengirimkan rooms langsung sebagai respons
+          });
+        }
+      } catch (error) {
+        res.status(400).json({ 
+          message: `error : ${ error.message}`
+        });
+      }
+};
 
 
 const insertRoom = async (req,res) => {
@@ -52,5 +76,5 @@ const insertRoom = async (req,res) => {
 
 module.exports = {
     getRooms,
-    insertRoom
+    insertRoom,getRoomsAdmin
 };
