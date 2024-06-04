@@ -34,12 +34,12 @@ Employee.belongsTo(Role,{
 });
 
 //For Booking
-Room.hasMany(Booking,{
-    foreignKey:{
-        name:'RoomId',
-        allowNull:false
-    }
-});
+// Room.hasMany(Booking,{
+//     foreignKey:{
+//         name:'RoomId',
+//         allowNull:false
+//     }
+// });
 Booking.belongsTo(RoomType,{
     foreignKey:{
         name:'RoomTypeId',
