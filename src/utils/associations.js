@@ -40,12 +40,7 @@ Employee.belongsTo(Role,{
 //         allowNull:false
 //     }
 // });
-Booking.belongsTo(RoomType,{
-    foreignKey:{
-        name:'RoomTypeId',
-        allowNull:false
-    }
-});
+
 Customer.hasMany(Booking,{
     foreignKey:{
         name:'CustomerId',

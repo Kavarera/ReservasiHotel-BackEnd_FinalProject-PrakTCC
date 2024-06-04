@@ -19,6 +19,10 @@ const Booking = sequelize.define('Booking',{
     days:{
         type:DataTypes.INTEGER,
         allowNull:false
+    },
+    RoomTypeId:{
+        type:DataTypes.INTEGER,
+        allowNull:false
     }
 });
 
