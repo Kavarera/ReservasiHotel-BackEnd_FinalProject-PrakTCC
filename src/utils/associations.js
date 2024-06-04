@@ -40,9 +40,9 @@ Room.hasMany(Booking,{
         allowNull:false
     }
 });
-Booking.belongsTo(Room,{
+Booking.belongsTo(RoomType,{
     foreignKey:{
-        name:'RoomId',
+        name:'RoomTypeId',
         allowNull:false
     }
 });

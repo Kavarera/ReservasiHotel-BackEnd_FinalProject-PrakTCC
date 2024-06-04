@@ -44,7 +44,7 @@ const getBookingByRoomId = async(req,res)=>{
 const insertBooking = async (req,res)=>{
     try{
         //search customer then create customer first if not exist
-        const {nik,fullname,phone,email,checkin,days,RoomId} = req.body;
+        const {nik,fullname,phone,email,checkin,days,RoomTypeId,RoomId} = req.body;
         const [customer,created] = await Customer.findOrCreate({
             where:{
                 nik:nik
@@ -58,7 +58,7 @@ const insertBooking = async (req,res)=>{
             kode_booking: kb,
             checkin: checkin,
             days:days,
-            RoomId: RoomId,
+            RoomTypeId: RoomTypeId,
             CustomerId: customer.id
         });
         res.status(200).json({
