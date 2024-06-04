@@ -25,7 +25,7 @@ const getBookingByRoomId = async(req,res)=>{
     try{
         const booking = await Booking.findAll({
             where:{
-                RoomId: req.params.RoomId
+                RoomTypeId: req.params.RoomTypeId
             },
             attributes:['checkin','days']
         });
@@ -79,7 +79,7 @@ const insertBooking = async (req,res)=>{
 const getPrivateBooking = async(req,res)=>{
     try{
         const booking = await Booking.findAll({
-            attributes:['kode_booking','checkin','days','RoomId','CustomerId']
+            attributes:['kode_booking','checkin','days','RoomTypeId','CustomerId']
         });
         res.status(200).json({
             length: booking.length,
