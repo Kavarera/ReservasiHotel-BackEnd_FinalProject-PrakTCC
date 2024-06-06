@@ -41,7 +41,7 @@ router.delete('/room', verifyAdmin,deleteRoom);
 //Read All Booking, ITS TOP SECRET!
 router.get('/bookings',getBookings);
 
-router.get('/bookings/:RoomId',getBookingByRoomId);
+router.get('/bookings/:RoomTypeId',getBookingByRoomId);
 
 //get full list of booking, only for admin
 router.get('/admin/bookings',verifyAdmin,getPrivateBooking)
